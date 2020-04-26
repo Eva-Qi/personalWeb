@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale=1">
+    <meta name = "description" content = "Pesonal Website of Xintong (Eva) Qi, a highschool senior/college freshman at CMU. This Website comprises her current projects and contact info.">
+    <meta name = "subject" content = "Eva Qi Personal Website Mian Page">
+    <meta name = "ICBM" content = "39.9042; 116.4074">
+    <meta name = "geo.placename" content = "Beijing">
+    <title>XintongQi Main Page</title> 
+    <base href="https://eva-qi.github.io/personalWeb/">
+    <!--Some education come from htmlhead.dev and wikipedia-->
+    <!--Code referrenced w3schools and https://www.youtube.com/watch?v=0zLf9urBYio-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="preload" href="style.css" as="style">
+    <link rel='preload' href='main.js' as='script'>
+    <link rel = "me" href = "mailto:xintongq@andrew.cmu.edu">
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body> 
+    <style>
+        .body{
+            margin:0;
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif,'Apple Color Emoji','Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji';
+            font-size:16px;
+            font-weight:400;
+            line-height:1.5;
+            color:darkslategrey;
+            text-align:left;
+            background-color:#EBDDE2;
+        }
+        #preloader{
+            position:fixed;
+            width:100%;
+            height:100%;
+            top:0;
+            left:0;
+            z-index:999999;
+            background: #000000;
+        }
+        .loader{
+            width:40px;
+            height:40px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            margin-top:-13px;
+            margin-left:-13px;
+            border-radius:60px;
+            animation:loader 0.8s linear infinite;
+            -webkit-animation: loader 0.8s linear infinite;
+        }
+        .EvaHeader{
+            background: #C47400;
+            display:block;
+            box-sizing:border-box;
+            font-family:'Libre Franklin', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .wrapper{
+            width:100%;
+            padding-right:15px;
+            padding-left:15px;
+            margin-right:auto;
+            margin-left:auto;
+        }
+        .EvaHeader .wrapper{
+            position:relative;
+        }
+        .rowWrapper{
+            display:flex;
+            flex-wrap:wrap;
+            margin-right:-15px;
+            margin-left:-15px;
+        }
+        .colLogo{
+            position:relative;
+            width:100%;
+            padding-right:15px;
+            padding-left:15px;
+            flex:0 0 16.6667%;
+            max-width:16.6667%;
+        }
+        .colLogo1{
+            position:relative;
+            width:100%;
+            padding-right:15px;
+            padding-left:15px;
+            flex: 0 0 83.3333%;
+            max-width:83.3333%;
+        }
+        .logo{
+            padding:24px 0 30px;
+        }
+        .logo a{
+            display:inline-block;
+        }
+        .img{
+            max-width:100%;
+            vertical-align:middle;
+            border-style:none;
+        }
+        .navBar{
+            text-align:right
+        }
+        .ul{
+            margin-block-start:16px;
+            margin-block-end:16px;
+            margin-inline-start:16px;
+            margin-inline-end:0px;
+            padding-inline-start:40px;
+        }
+        .li{
+            text-align: -webkit-match-parent;
+        }
+        .ul, ol{
+            padding:0;
+            margin:0;
+        }
+        .navBar ul li{
+            display:inline-block;
+            list-style:none;
+            margin-left:35px;
+            position:relative;
+        }
+        .navBar ul li.active a, .navBar ul li a:hover{
+            color: white;
+        }
+        .navBar ul li a{
+            font-size:16px;
+            color:#f5d8d7;
+            font-weight:700;
+            display:inline-block;
+            padding:25px 0 30px;
+            transition:all 0.3s;
+        }
+        .shortenedNavBar{
+            display:block;
+            background:transparent;
+            padding:0;
+            font-size:16px;
+            box-sizing:border-box;
+            *zoom:1;
+        }
+        *, ::after, ::before{
+            box-sizing:border-box;
+        }
+        .shortenedNavBar::before{
+            content:'';
+            display:table;
+            box-sizing:border-box;
+        }
+        .shortenedNavBar::after{
+            content:'';
+            display:table;
+            clear:both;
+            box-sizing:border-box;
+        }
+        .shortenedNavBar > .shortenedNavBarText{
+            display:block;
+            line-height:19px;
+            float:left;
+            color:white;
+            font-weight:700;
+            text-shadow: 0 1px 3px #000000;
+        }
+        .shortenedNavBar > .shortenedNavBarIcon{
+            float:left;
+            width: 18px;
+            height: 14px;
+            margin: 3px 0 0 7px;
+        }
+        .shortenedNavBar > .shortenedNavBarIcon::before {
+            background:0 0;
+            width: 18px;
+            height:14px;
+            display:block;
+            content:'';
+            position:absolute;
+        }
+        .shortenedNavBar > .shortenedNavBarIconBars{
+            display:block;
+            width: 18px;
+            height: 2px;
+            border-radius:1px;
+            box-shadow: 0 1px 0 rgba(0,0,0,.25);
+            background-color:white;
+            margin-bottom:3px
+        }
+        .shortNavBarButton{
+            vertical-align: middle;
+            padding: 7px 8px;
+            line-height: 18px;
+            cursor:pointer;
+            text-decoration:none;
+            text-shadow: 0 1px 1px rgba(255,255,255,.75);
+            margin:0;
+            border-radius:0;
+            background-color:rgba(255,165,0,.70);
+            position:absolute;
+            right:15px;
+            top:20px;
+            display:inline-block;
+            float:none;
+        }
+        .shortNavNav{
+            list-style:none;
+            overflow:hidden;
+            padding:0;
+            clear:both;
+            color:white;
+            margin:0;
+            font-size:7px;
+            background:rgba(255,165,0,.70);
+            display:block;
+        }
+        .shortNavNav ul{
+            list-style:none;
+            overflow:hidden;
+            padding:0;
+            margin:0;
+            display:block;
+        }
+        .shortNavNav li{
+            display:block;
+        }
+        .shortNavNav a{
+            padding:8px 30px;
+            margin:0;
+            color: white;
+            text-decoration:none;
+            display:block;
+            background-color:transparent;
+        }
+        .shortNavCollapsed{
+
+        }
+    </style>
+    <!--Z-index is the stackorder, greater number is on the top-->
+    <!--Page Preloader-->
+    <div id = 'preloader' style = "display:none;">
+    <div class = 'loader'style = 'display:none;'></div>
+    </div>
+    <!--Header, which will have my nav bars-->
+    <header class = 'EvaHeader'>
+        <div class = 'wrapper'>
+            <div class = 'rowWrapper'>
+                <div class = 'colLogo'>
+                    <a href = '#'>
+                        <img style='max-width:225px'; src ='White Version.png' alt='EvaQi'>
+                    </a>
+                </div>
+                <div class = 'colLogo1'>
+                    <div class= 'navBar'>
+                        <ul>
+                            <li class = 'active'>
+                                <a href="./index.html" >Home </a>
+                            </li>
+                            <li>
+                                <a href="./Project.html">Project</a> 
+                            </li>
+                            <li>
+                                <a href="CurrentProject.html">Ongoing </a>
+                            </li>
+                            <li>
+                                <a href="Contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class = "shortenedNavBar">
+                <a href ='#' class= 'shortNavBarButton shortNavCollapsed'>
+                    <span class = 'shortenedNavBar. shortenedNavBarText'>Menu</span>
+                    <span class = 'shortenedNavBar. shortenedNavBarIcon'>
+                        <span class = 'shortenedNavBar.shortenedNavBarIconBars'></span>
+                        <span class = 'shortenedNavBar.shortenedNavBarIconBars'></span>
+                        <span class = 'shortenedNavBar.shortenedNavBarIconBars'></span>
+                    </span>
+                </a>
+                <div class = 'shortNavNav shortNavHidden' aria-hidden='false' role = 'menu' style>
+                    <ul>
+                        <li class='active'><a href='./index.html' role='menuitem'>Home</a></li>
+                        <li ><a href='./Project.html' role='menuitem'>Project</a></li>
+                        <li ><a href='./CurrentProject.html' role='menuitem'>Ongoing</a></li>
+                        <li ><a href='./Contact.html' role='menuitem'>Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class = 'EvaMiddle'>
+        
+    </div>
+
+</body>

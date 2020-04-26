@@ -2,15 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale=1">
+    <meta name = "description" content = "Pesonal Website of Xintong (Eva) Qi, a highschool senior/college freshman at CMU. This Website comprises her current projects and contact info.">
+    <meta name = "subject" content = "Eva Qi Personal Website Mian Page">
+    <meta name = "ICBM" content = "39.9042; 116.4074">
+    <meta name = "geo.placename" content = "Beijing">
+    <title>XintongQi Main Page</title> 
+    <base href="https://eva-qi.github.io/personalWeb/">
+    <!--Some education come from htmlhead.dev and wikipedia-->
     <!--Code referrenced w3schools and https://www.youtube.com/watch?v=0zLf9urBYio-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel = "me" href = "mailto:xintongq@andrew.cmu.edu">
     <script src="https://kit.fontawesome.com/yourcode.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <meta http-equiv = "X-UA-Compatible" content = "IE-edge">
-    <title>XintongQi Main Page</title> 
-    <meta name ="viewport" content = "width = device-width, initial-scale=1">
     
+    <!-- things to regard on $42 he used f4a24c i used EBE8DD
+    
+    -->
     <style type = "text/css">
 
         .Eva{background: #EBE8DD;}
@@ -36,7 +45,7 @@
         }
 
         .main-timeline .timeline:before{
-            content:"";
+            content: "";
             grid-row-end: 15px;
             height: 100%;
             margin: 0 auto;
@@ -46,7 +55,6 @@
             right: 0;
 
         }
-
         .main-timeline .timeline:first-child:before{
             height:50%;
             border-radius: 10px 10px 0 0;
@@ -103,12 +111,12 @@
         }
 
         .main-timeline .year{
-            width:50%;
+            width: 50%;
             padding-left: 50px;
             position: absolute;
             top: 50%;
             right: 0;
-            transform: translateY(-50%)
+            transform: translateY(-50%);
         }
 
 
@@ -123,34 +131,33 @@
 
         }
 
-        .main-timeline .timeline:nth-child(2n).timeline-icon:before{
-            border-right:none;
+        .main-timeline .timeline:nth-child(even).timeline-icon:before{
+            border-right: none;
             border-left: 15px solid #A77270;
             left: auto;
-            right: -33px
+            right: -33px;
         }
-        .main-timeline .timeline:nth-child(2n).timeline-content{
+        .main-timeline .timeline:nth-child(even).timeline-content{
             float:right;
             padding: 0 0 0 100px;
         }
-        .main-timeline .timeline:nth-child(2n).description{padding-left:20px;}
+        .main-timeline .timeline:nth-child(even).description{padding-left: 20px;}
 
-        .main-timeline .timeline:nth-child(2n).year{
+        .main-timeline .timeline:nth-child(even).year{
             padding: 0 50px 0 0;
             text-align: right;
             right: auto;
             left: 0;
         }
 
-        .main-timeline .timeline:nth-child(2n).year span{border-radius: 50px 0 0 50px}
+        .main-timeline .timeline:nth-child(even).year span{border-radius: 50px 0 0 50px;}
 
-        .main-timeline .timeline:nth-child(2n).timeline-icon{border-color:#A77270;}
+        .main-timeline .timeline:nth-child(even).timeline-icon{border-color:#A77270;}
 
-        .main-timeline .timeline:nth-child(2n).icon{color:#A77270;}
-        .main-timeline .timeline:nth-child(2n):before,
-        .main-timeline .timeline:nth-child(2n).year span{
-            background: #EBE8DD;}
-        .main-timeline .timeline:nth-child(2n).timeline-before{border-right-color:#EBE8DD;}
+        .main-timeline .timeline:nth-child(even).icon{color:#A77270;}
+        .main-timeline .timeline:nth-child(even):before,
+        .main-timeline .timeline:nth-child(even).year span{ background: #EBE8DD;}
+        .main-timeline .timeline:nth-child(even).timeline-before{border-right-color:#EBE8DD;}
 
 
 
@@ -173,10 +180,9 @@
             font:50;
             text-align: center;
         }
-        body{
+        .body{
         margin: 10;
         font-family:Arial, Helvetica, sans-serif;
-        color: black;
         }
 
         .topnav{
@@ -211,8 +217,8 @@
 <div class="topnav">
     <a  class="topnav. element" href="index.html">Home</a>
     <a  class="topnav. element" href="index.html">Project</a>
-    <a  class="topnav. element" href="index.html">Ongoing</a>
-    <a  class="topnav. element" href="index.html">Contact</a>
+    <a  class="topnav. element" href="CurrentProject.html">Ongoing</a>
+    <a  class="topnav. element" href="Contact.html">Contact</a>
 </div>
 
 <div class="name">
@@ -221,9 +227,36 @@
     </p>
 </div>
 
+<input class=searchbar type="text" placeholder="Search For a Project..">
+<!-- input field will be different in different browsers-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".searchbar").keyup(function(event){
+            var k =$(this).val()
+
+            loadData(k)
+        });
+    });
+    <!-- Parsing Input-->
+
+    function loadData(str){
+
+        var param =str.toLowerCase();
+        param ='.'+param;
+
+        for (var i=0; i<toggleElems, lenth;i++){
+            $(toggleElems[i]).css('display','none');
+        }
+
+        $(param).addClass('display,'inline-block');
+
+    }
+</script>
+<!-- get a input filed on our things. have JQuery  livedemo will be under the download-->
+
 <img
     src="Eva_Current_Photo.png" 
-    alt="Me This is A place holder" 
+    alt="Me" 
     height="100"
     width="100"> 
 
@@ -237,23 +270,18 @@
                         <div class = "timeline-content">
                             <i class = "fa fa-globe"></i>
                             <p class = "name">
-                                President of School Robotics Club and Captain of Robotics team, Pomfret	Sep 2017-May 2019
-Founded and led Robotics Club meetings and practices regularly since 2017.
-Successfully advised the school to open a robotics class in 2019 winter and provided students opportunities to learn robotics and coding using Code-academy and EV3 robots.
-Created business plan and successfully acquired two grants from NASA and FRC that allowed the team to join the First Robotics Competition in spring 2019, in which the team won both Rookie Awards. 
+                                President of School Robotics Club and Captain of Robotics team, Pomfret	Sep 2017-May 2019Founded and led Robotics Club meetings and practices regularly since 2017.Successfully advised the school to open a robotics class in 2019 winter and provided students opportunities to learn robotics and coding using Code-academy and EV3 robots.Created business plan and successfully acquired two grants from NASA and FRC that allowed the team to join the First Robotics Competition in spring 2019, in which the team won both Rookie Awards. 
                             </p>
                         </div>
                         <div class = "year"><span>2020</span></div>
                     </div>
+
                     <div class = "timeline">
                         <span class = "timeline-icon">b</span>
                         <div class = "timeline-content">
                             <i class = "fa fa-briefcase"></i>
                             <p class = "description">
-                                President of School Robotics Club and Captain of Robotics team, Pomfret	Sep 2017-May 2019
-Founded and led Robotics Club meetings and practices regularly since 2017.
-Successfully advised the school to open a robotics class in 2019 winter and provided students opportunities to learn robotics and coding using Code-academy and EV3 robots.
-Created business plan and successfully acquired two grants from NASA and FRC that allowed the team to join the First Robotics Competition in spring 2019, in which the team won both Rookie Awards. 
+                                President of School Robotics Club and Captain of Robotics team, Pomfret	Sep 2017-May 2019Founded and led Robotics Club meetings and practices regularly since 2017.Successfully advised the school to open a robotics class in 2019 winter and provided students opportunities to learn robotics and coding using Code-academy and EV3 robots.Created business plan and successfully acquired two grants from NASA and FRC that allowed the team to join the First Robotics Competition in spring 2019, in which the team won both Rookie Awards. 
                             </p>
                         </div>
                         <div class = "year"><span>2019</span></div>
