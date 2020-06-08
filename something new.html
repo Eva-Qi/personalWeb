@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale=1">
+    <meta name = "description" content = "Pesonal Website of Xintong (Eva) Qi, a highschool senior/college freshman at CMU. This Website comprises her current projects and contact info.">
+    <meta name = "subject" content = "Eva Qi Personal Website Mian Page">
+    <meta name = "ICBM" content = "39.9042; 116.4074">
+    <meta name = "geo.placename" content = "Beijing">
+    <title>XintongQi Main Page</title> 
+    <base href="https://eva-qi.github.io/personalWeb/">
+    <!--Some education come from htmlhead.dev and wikipedia-->
+    <!--Code referrenced w3schools and https://www.youtube.com/watch?v=0zLf9urBYio-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="main.css"
+
+    <!-- above are new from https://www.youtube.com/watch?v=T7PnWnTgusc -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="preload" href="style.css" as="style">
+    <link rel='preload' href='main.js' as='script'>
+    <link rel = "me" href = "mailto:xintongq@andrew.cmu.edu">
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="menu-toggler">
+            <!--I can customize this toggler-->
+            <div class="bar half start"></div>
+            <div class="bar"></div>
+            <div class="bar half end"></div>
+        </div>
+        <nav class="top-nav">
+            <ul class="nav-list">
+                <li class = 'active'>
+                    <a href="./index.html" >Home </a>
+                </li>
+                <li>
+                    <a href="./Project.html">Project</a> 
+                </li>
+                <li>
+                    <a href="CarnegieMellonUniversity_XintongQi_Math2023_Resume.pdf">Resume</a>
+                </li>
+                <li>
+                    <a href="Contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class = 'EvaMiddle'>
+            <div class = 'wrap'>
+                <div id="arrow-left" class = "arrow"></div>
+                <div id = "arrow-right" class = "arrow"></div>
+                <div id = "slider">
+                    <div class = "slide slide1" >
+                        <div class = "slide-content">
+                            <span>I miss youth</span>
+                        </div>
+                    </div>
+                    <div class = "slide slide2">
+                        <div class = "slide-content">
+                            <span>And Friends</span>
+                        </div>
+                    </div>
+                    <div class = "slide slide3">
+                        <div class = "slide-content">
+                            <span>And not biologically related sister.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p> Hello world thanks for stopping by :)</p>
+        </div>
+            <script>
+                let sliderImages = document.querySelectorAll(".slide"),
+                arrowRight = document.querySelector('#arrow-right'),
+                arrowLeft = document.querySelector('#arrow-left'),
+                current = 0;
+        
+                //clear all images
+                function reset(){
+                    for (let i =0; i<sliderImages.length; i++){
+                        sliderImages[i].style.display='none'; 
+                    }
+                }
+                function startSlide(){
+                    reset();
+                    sliderImages[0].style.display = 'block';
+                }
+                //show next
+                function slideRight(){
+                    reset();
+                    sliderImages[current+1].style.display = "block";
+                    current++;
+                }
+                arrowRight.addEventListener('click',function(){
+                    if(current==sliderImages.length -1){
+                        current = -1
+                    }
+                    slideRight();
+                });
+                //show prev
+                function slideLeft(){
+                    reset();
+                    sliderImages[current-1].style.display = "block";
+                    current--;
+                }
+                arrowLeft.addEventListener('click',function(){
+                    if(current==0){
+                        current = sliderImages.length;
+                    }
+                    slideLeft();
+                });
+                startSlide();
+            </script>
+    </header>
+</body>

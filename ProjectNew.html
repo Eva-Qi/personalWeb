@@ -30,10 +30,6 @@
             color:darkslategrey;
             text-align:left;
             background-color:#EBDDE2;
-            width:100%;
-            height:100wh;
-            overflow-x:hidden;
-            padding:0;
         }
         #preloader{
             position:fixed;
@@ -197,6 +193,7 @@
             box-shadow: 0 1px 0 #f5d8d7;
             background:white;
             margin-bottom:3px;
+            transition:all .5s ease-in-out;
         }
         .shortenedNavBarIcon .shortenedNavBarIconBars::after{
             content:'';
@@ -208,7 +205,7 @@
             background:white;
             margin-bottom:3px;
             position:absolute;
-            transition:all .2s ease-in-out;
+            transition:all .5s ease-in-out;
             transform:translateY(5px);
         }
         .shortenedNavBarIcon .shortenedNavBarIconBars::before{
@@ -221,7 +218,7 @@
             background:white;
             margin-bottom:3px;
             position:absolute;
-            transition:all .2s ease-in-out;
+            transition:all .5s ease-in-out;
             transform:translateY(-5px);
         }
         .shortNavBarButton{
@@ -308,10 +305,12 @@
         if ($('.shortNavNav').css('display') == 'none') {
             $('.shortNavNav').css('display', 'block');
             $('.shortenedNavBarIcon .shortenedNavBarIconBars').css('transform','translateX(-20px)');
-            $('.shortenedNavBarIcon .shortenedNavsBarIconBars').css('background','transparent');
+            $('.shortenedNavBarIcon .shortenedNavBarIconBars').css('background','transparent');
             $('.shortenedNavBarIcon .shortenedNavBarIconBars').css('box-shadow','none');
-            $('.shortenedNavBarIcon .shortenedNavBarIconBars').css('transform',"rotate(45deg)");
-            $('.shortenedNavBarIconBars:after').css('transform',"rotate(-45deg)");
+            $document.getElementByClassName(".shortenedNavBarIcon .shortenedNavBarIconBars::before").style.transform = "rotate(45deg)";
+            $document.getElementByClassName(".shortenedNavBarIcon .shortenedNavBarIconBars::after").style.transform = "rotate(4-5deg)";            
+            $('.shortenedNavBarIcon .shortenedNavBarIconBars::before').css('transform',"translate(25px,-25px)");
+            $('.shortenedNavBarIcon .shortenedNavBarIconBars::after').css('transform',"translate(25px,25px)");
             
         } 
         else {
@@ -349,7 +348,7 @@
                                 <a href="./Project.html">Project</a> 
                             </li>
                             <li>
-                                <a href="CarnegieMellonUniversity_XintongQi_Math2023_Resume.pdf">Resume</a>
+                                <a href="CurrentProject.html">Ongoing </a>
                             </li>
                             <li>
                                 <a href="Contact.html">Contact</a>
@@ -375,130 +374,8 @@
             </div>
         </div>
     </header>
-    <style>
-    .EvaMiddle,#slider, .wrap, .slide-content{
-        margin:0;
-        padding:0;
-        font-family:Arial, Helvetica, sans-serif;
-        width:100%;
-        height:100vh;
-        overflow:hidden;
-    }
-    .wrap{
-        position:relative;
-    }
-    .slide{
-        background-size:cover;
-        background-position:center;
-        background-repeat: no-repeat;
-
-    }
-    .slide1{background-image:url('people.jpeg')}
-    .slide2{background-image:url('people2.JPG')}
-    .slide3{background-image:url('people3.jpg')}
-
-    .slide-content{
-        display:flex;
-        flex-direction: column;
-        justify-content:center;
-        align-items:center;
-        text-align:center;
-    }
-    .slide-content span{
-        font-size:5rem;
-        margin-top:-50px;
-        color:white;
-    }
-    .arrow{
-        cursor: pointer;
-        position:absolute;
-        top:50%;
-        margin-top:-50px;
-        width:0;
-        height:0;
-        border-style:solid;
-    }
-    #arrow-left{
-        border-width:20px 30px 20px 0;
-        left:0; 
-        border-color:transparent white transparent transparent;
-        margin-left:30px;
-    }
-    #arrow-right{
-        border-width:20px 0 20px 30px;
-        right:0; 
-        border-color:transparent transparent transparent white;
-        margin-right:30px;
-    }
-    </style>
-
     <div class = 'EvaMiddle'>
-        <div class = 'wrap'>
-            <div id="arrow-left" class = "arrow"></div>
-            <div id = "arrow-right" class = "arrow"></div>
-            <div id = "slider">
-                <div class = "slide slide1" >
-                    <div class = "slide-content">
-                        <span>I miss youth</span>
-                    </div>
-                </div>
-                <div class = "slide slide2">
-                    <div class = "slide-content">
-                        <span>And Friends</span>
-                    </div>
-                </div>
-                <div class = "slide slide3">
-                    <div class = "slide-content">
-                        <span>And not biologically related sister.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <p> Hello world thanks for stopping by :)</p>
     </div>
-    <script>
-        let sliderImages = document.querySelectorAll(".slide"),
-        arrowRight = document.querySelector('#arrow-right'),
-        arrowLeft = document.querySelector('#arrow-left'),
-        current = 0;
-
-        //clear all images
-        function reset(){
-            for (let i =0; i<sliderImages.length; i++){
-                sliderImages[i].style.display='none'; 
-            }
-        }
-        function startSlide(){
-            reset();
-            sliderImages[0].style.display = 'block';
-        }
-        //show next
-        function slideRight(){
-            reset();
-            sliderImages[current+1].style.display = "block";
-            current++;
-        }
-        arrowRight.addEventListener('click',function(){
-            if(current==sliderImages.length -1){
-                current = -1
-            }
-            slideRight();
-        });
-        //show prev
-        function slideLeft(){
-            reset();
-            sliderImages[current-1].style.display = "block";
-            current--;
-        }
-        arrowLeft.addEventListener('click',function(){
-            if(current==0){
-                current = sliderImages.length;
-            }
-            slideLeft();
-        });
-        startSlide();
-    </script>
 
 </body>
-</html>

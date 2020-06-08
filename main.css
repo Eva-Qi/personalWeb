@@ -1,0 +1,54 @@
+.EvaMiddle,#slider, .wrap, .slide-content{
+    margin:0;
+    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+}
+.wrap{
+    position:relative;
+}
+.slide{
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+
+}
+.slide1{background-image:url('people.jpeg')}
+.slide2{background-image:url('people2.JPG')}
+.slide3{background-image:url('people3.jpg')}
+
+.slide-content{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+.slide-content span{
+    font-size:5rem;
+    margin-top:-50px;
+    color:white;
+}
+.arrow{
+    cursor: pointer;
+    position:absolute;
+    top:50%;
+    margin-top:-50px;
+    width:0;
+    height:0;
+    border-style:solid;
+}
+#arrow-left{
+    border-width:20px 30px 20px 0;
+    left:0; 
+    border-color:transparent white transparent transparent;
+    margin-left:30px;
+}
+#arrow-right{
+    border-width:20px 0 20px 30px;
+    right:0; 
+    border-color:transparent transparent transparent white;
+    margin-right:30px;
+}
